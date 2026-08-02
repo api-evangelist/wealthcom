@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor/authentication
+docs: https://developer.wealth.com/advisor/authentication
+schemes:
+- name: AdvisorOAuth2
+  api: Wealth.com Advisor API
+  flows:
+  - flow: authorizationCode
+    pkce: true
+    note: Authorization/token URLs not published in public docs; discovered via advisor onboarding.
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issue an ID token for the signed-in advisor user.
+  flows: [authorizationCode]
+- scope: email
+  description: Access the advisor user's email address claim.
+  flows: [authorizationCode]
+- scope: profile
+  description: Access the advisor user's basic profile claims.
+  flows: [authorizationCode]
+notes: >-
+  Wealth.com documents the standard OpenID Connect scopes (openid, email, profile) plus
+  "any custom configured scopes" negotiated per integration. A full custom-scope reference
+  is not published on the public developer portal.

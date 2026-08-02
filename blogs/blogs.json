@@ -1,0 +1,21 @@
+{
+  "repo": "wealthcom",
+  "feeds": [
+    {
+      "source": "https://www.wealth.com/feed/",
+      "feed_url": "https://www.wealth.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://wealth.com/help",
+      "feed_url": "https://www.wealth.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-08-01T15:49:00Z"
+}

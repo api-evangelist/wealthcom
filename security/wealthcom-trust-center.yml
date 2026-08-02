@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.wealth.com/privacy-and-security/
+url: https://trust.wealth.com/
+certifications:
+- SOC 2 Type 2
+compliance:
+  soc2_type2:
+    detail: >-
+      SOC 2 Type 2, an AICPA auditing standard covering the five Trust Services Criteria
+      (security, availability, confidentiality, privacy, processing integrity); yearly
+      independent CPA audit.
+security_controls:
+  encryption_in_transit: SSL/TLS 1.2+
+  encryption_at_rest: AES-256
+  mfa: Multi-factor authentication for sign-in
+  access_control: Least-privilege access control
+  monitoring: Continuous logging and monitoring
+  personnel: Employee background checks and confidentiality agreements
+  data_residency: Data stored exclusively in the United States
+  data_selling: "We never sell your data"
+evidence:
+- source: https://trust.wealth.com/
+  keywords: [trust center]
+- source: https://www.wealth.com/privacy-and-security/
+  keywords: [soc 2 type 2, aes-256, tls 1.2, mfa]

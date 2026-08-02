@@ -1,0 +1,45 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor
+docs: https://developer.wealth.com/advisor
+api: Wealth.com Advisor API
+base_url: https://advisor-api.wealth.com/v1
+transport:
+  scheme: https
+  min_tls: '1.2'
+  format: JSON over HTTPS
+authentication:
+  style: OAuth2 authorization-code + PKCE (Bearer JWT, RS256)
+  ref: authentication/wealthcom-authentication.yml
+versioning:
+  scheme: uri-path
+  versions: [v1, v2]
+  current: v1
+  note: >-
+    v1 is the primary Advisor API (base https://advisor-api.wealth.com/v1); a v2 revision is
+    documented at https://developer.wealth.com/advisor-v2 with asset, client-group, contact,
+    document and top-account resources.
+rate_limiting:
+  documented: true
+  limit: 10 requests per second per client
+  behavior: Exceeding the limit returns rate-limit errors; increases available via support.
+  ref: rate-limits/wealthcom-rate-limits.yml
+idempotency:
+  documented: false
+  note: No idempotency-key contract is published on the public developer portal.
+pagination:
+  documented: false
+  note: Not published on the public developer portal.
+webhooks:
+  supported: true
+  delivery: at-least-once, HTTP POST, form-encoded body to an HTTPS endpoint
+  auth_header: wealth-api-key (validated by receiver)
+  ref: asyncapi/wealthcom-webhooks.yml
+error_envelope:
+  documented_for: Onboarding API (errors reference page)
+  ref: errors/wealthcom-problem-types.yml
+sftp:
+  supported: true
+  note: >-
+    A separate Advisor SFTP interface supports bulk exchange of user, account, entitlement,
+    entity, top-account and client-group data (developer.wealth.com/advisor-sftp).

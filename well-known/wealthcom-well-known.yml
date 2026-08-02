@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+note: >-
+  Probed /.well-known/ discovery surfaces across the website, developer portal, and API host.
+  No /.well-known/ documents are published. A marketing llms.txt is served at the website root
+  (captured separately at llms/wealthcom-llms.txt). Absence is a valid, recorded result.
+hosts:
+- host: https://www.wealth.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /llms.txt, status: 200, file: ../llms/wealthcom-llms.txt}
+- host: https://developer.wealth.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://advisor-api.wealth.com
+  documents:
+  - {path: /.well-known/openid-configuration, status: 403, note: host reachable but discovery document is access-controlled}

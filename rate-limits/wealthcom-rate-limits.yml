@@ -1,0 +1,11 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor
+api: Wealth.com Advisor API
+rate_limits:
+- scope: per-client
+  limit_count: 10
+  window: 1s
+  description: The Advisor API enforces a per-client rate limit of 10 requests per second.
+  on_exceed: Returns rate-limit errors; higher limits available on request via support.
+  increase_via: https://wealth.com/help

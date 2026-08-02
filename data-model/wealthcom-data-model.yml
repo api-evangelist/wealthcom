@@ -1,0 +1,67 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor
+api: Wealth.com Advisor API
+note: >-
+  Derived from the documented Advisor API and SFTP resource surface (no OpenAPI published).
+  Relationships are inferred from the resource taxonomy in the developer portal; field-level
+  keys are not published publicly.
+entities:
+- name: Client
+  domain: advisor
+  description: An advisor's client (household/individual) managed in Wealth.com.
+- name: Asset
+  domain: advisor
+  description: A financial asset belonging to a client.
+- name: Document
+  domain: advisor
+  description: An estate planning document associated with a client.
+- name: Contact
+  domain: advisor
+  description: A contact (e.g. attorney, executor, beneficiary) related to a client.
+- name: Quiz
+  domain: advisor
+  description: An estate-planning intake quiz and its recommendations.
+- name: AINote
+  domain: advisor
+  description: AI-generated notes (Ester AI) attached to a client's planning.
+- name: ClientGroup
+  domain: advisor|sftp
+  description: A grouping of clients (e.g. a firm/book of business).
+- name: TopAccount
+  domain: advisor|sftp
+  description: A top-level account/organization in the advisor hierarchy.
+- name: User
+  domain: sftp
+  description: An advisor user account.
+- name: Entitlement
+  domain: sftp
+  description: Access entitlements assigned to users/accounts.
+- name: Entity
+  domain: sftp
+  description: A legal/planning entity record exchanged over SFTP.
+relationships:
+- from: TopAccount
+  to: ClientGroup
+  type: has_many
+- from: ClientGroup
+  to: Client
+  type: has_many
+- from: Client
+  to: Asset
+  type: has_many
+- from: Client
+  to: Document
+  type: has_many
+- from: Client
+  to: Contact
+  type: has_many
+- from: Client
+  to: Quiz
+  type: has_many
+- from: Client
+  to: AINote
+  type: has_many
+- from: User
+  to: Entitlement
+  type: has_many

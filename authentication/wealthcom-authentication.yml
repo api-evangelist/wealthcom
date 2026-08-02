@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor/authentication
+docs: https://developer.wealth.com/advisor/authentication
+summary:
+  types: [oauth2, publicKey]
+  oauth2_flows: [authorizationCode]
+  pkce: recommended-required-for-public-clients
+  token_format: JWT (RS256, asymmetric, verified against authorization-server JWKS)
+  transport_security: TLS 1.2 or higher required
+schemes:
+- name: AdvisorOAuth2
+  api: Wealth.com Advisor API
+  type: oauth2
+  flow: authorizationCode
+  pkce:
+    supported: true
+    challenge_method: S256
+    note: PKCE recommended; may be required for public clients (SPAs, native apps).
+  token:
+    type: bearer
+    header: 'Authorization: Bearer <access_token>'
+    format: JWT
+    algorithm: RS256
+    validation:
+      - Token must be a JWT access token (ID tokens are rejected for API calls).
+      - Must contain iss and sub claims and must not be expired.
+      - kid header verified against the authorization server's JWKS.
+    access_token_ttl: ~1 hour
+    refresh_token_ttl: up to ~30 days (environment dependent)
+  scopes:
+    standard: [openid, email, profile]
+    note: Standard OpenID Connect scopes plus any custom configured scopes.
+  base_url: https://advisor-api.wealth.com/v1
+- name: OnboardingPublicKey
+  api: Wealth.com Onboarding API
+  type: publicKey
+  mechanism: RSA public/private key pair
+  docs: https://developer.wealth.com/onboarding/authentication
+  note: >-
+    Partners generate an RSA key pair, export the public key to a .pem file, and share it
+    with Wealth.com. Connections encrypted using TLS 1.2 or higher.
+- name: WebhookApiKey
+  api: Wealth.com Advisor API (webhooks)
+  type: apiKey
+  in: header
+  parameter_name: wealth-api-key
+  note: >-
+    Each webhook POST includes a wealth-api-key header that the receiver validates against
+    the Wealth.com-issued API key (UUID). Keys may be rotated by Wealth.com.

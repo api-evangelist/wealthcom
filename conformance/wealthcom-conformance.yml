@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor/authentication
+standards:
+- id: oauth2
+  conforms: true
+  evidence: Advisor API uses OAuth2 authorization-code flow with PKCE (developer.wealth.com/advisor/authentication).
+- id: oidc
+  conforms: true
+  evidence: Standard OpenID Connect scopes (openid, email, profile); ID tokens distinguished from access tokens.
+- id: pkce-rfc7636
+  conforms: true
+  evidence: PKCE with S256 challenge recommended/required for public clients.
+- id: jwt-rs256
+  conforms: true
+  evidence: Access tokens are RS256-signed JWTs verified against the authorization server JWKS.
+- id: tls-1.2-plus
+  conforms: true
+  evidence: All connections require TLS 1.2 or higher (developer + privacy-and-security docs).
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type 2 certification, annual audit (trust.wealth.com, privacy-and-security page).
+- id: aes-256-at-rest
+  conforms: true
+  evidence: Data at rest encrypted with AES-256 (privacy-and-security page).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error format documented on the public portal.

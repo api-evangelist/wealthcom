@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/onboarding/errors
+docs:
+  advisor: https://developer.wealth.com/advisor
+  onboarding_errors: https://developer.wealth.com/onboarding/errors
+format: http-status
+note: >-
+  Wealth.com does not publish RFC 9457 application/problem+json error types on its public
+  developer portal. This catalog captures the error conditions the docs describe; the
+  Onboarding API maintains a dedicated errors reference (onboarding/errors) whose full
+  code table was not machine-readable at enrichment time.
+problems:
+- status: 401
+  title: Unauthorized
+  meaning: Missing, invalid, or expired Bearer access token; ID token used instead of access token.
+  remediation: Obtain a fresh OAuth2 access token (JWT, RS256) and send it as Authorization Bearer.
+  source: https://developer.wealth.com/advisor/authentication
+- status: 403
+  title: Forbidden
+  meaning: Authenticated client lacks entitlement/scope for the requested resource.
+  remediation: Confirm the advisor account entitlements and requested scopes.
+  source: https://developer.wealth.com/advisor/authentication
+- status: 429
+  title: Too Many Requests
+  meaning: Exceeded the Advisor API per-client rate limit of 10 requests/second.
+  remediation: Back off and retry; request a limit increase via support.
+  source: https://developer.wealth.com/advisor

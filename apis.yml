@@ -1,8 +1,14 @@
 aid: wealthcom
 name: Wealth.com
-description: 'Wealth.com is a company surfaced as a portfolio company of gv and added to the API Evangelist
-  network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: 'Wealth.com is the industry-leading estate and tax planning platform for financial
+  advisors, unifying estate document creation, tax intelligence, and its proprietary Ester AI
+  assistant to help advisors deliver sophisticated planning at scale. For developers, Wealth.com
+  publishes an Advisor API (OAuth2, JSON over HTTPS) that connects advisor applications to the
+  platform for managing clients, assets, documents, contacts, quizzes, and AI notes, plus a
+  webhook surface for real-time events and an Onboarding API for partner-referred client
+  onboarding. A separate SFTP interface supports bulk data exchange. The company is backed by
+  GV (Google Ventures) and integrates with Salesforce, Orion, Redtail, Wealthbox, Addepar,
+  eMoney, and other advisor tools.'
 url: https://raw.githubusercontent.com/api-evangelist/wealthcom/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +16,60 @@ x-backed-by:
 - gv
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.wealth.com/favicon.ico
 tags:
 - Company
 - Enterprise
-apis: []
+- Estate Planning
+- Tax Planning
+- Wealth Management
+- Financial Advisors
+- Fintech
+- Artificial Intelligence
+apis:
+- name: Wealth.com Advisor API
+  description: 'The Advisor API connects advisor applications to Wealth.com, exposing client,
+    asset, document, contact, quiz, AI-notes, client-group and top-account resources over JSON
+    HTTPS, with OAuth2 (authorization code + PKCE) authentication and a real-time webhook
+    surface. A v2 revision is available alongside v1.'
+  humanURL: https://developer.wealth.com/advisor
+  baseURL: https://advisor-api.wealth.com/v1
+  tags:
+  - Advisor API
+  - Estate Planning
+  - Webhooks
+  properties:
+  - type: Documentation
+    url: https://developer.wealth.com/advisor
+  - type: APIReference
+    url: https://developer.wealth.com/advisor
+  - type: Authentication
+    url: authentication/wealthcom-authentication.yml
+  - type: OAuthScopes
+    url: scopes/wealthcom-scopes.yml
+  - type: Webhooks
+    url: asyncapi/wealthcom-webhooks.yml
+  - type: Conventions
+    url: conventions/wealthcom-conventions.yml
+  - type: ErrorCatalog
+    url: errors/wealthcom-problem-types.yml
+  - type: DataModel
+    url: data-model/wealthcom-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +78,62 @@ maintainers:
 common:
 - type: Website
   url: https://www.wealth.com
+- type: DeveloperPortal
+  url: https://developer.wealth.com/
+- type: Documentation
+  url: https://developer.wealth.com/advisor
+- type: APIReference
+  url: https://developer.wealth.com/advisor
+- type: GettingStarted
+  url: https://developer.wealth.com/advisor/authentication
+- type: Authentication
+  url: authentication/wealthcom-authentication.yml
+- type: OAuthScopes
+  url: scopes/wealthcom-scopes.yml
+- type: Webhooks
+  url: asyncapi/wealthcom-webhooks.yml
+- type: Conventions
+  url: conventions/wealthcom-conventions.yml
+- type: RateLimits
+  url: rate-limits/wealthcom-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/wealthcom-lifecycle.yml
+- type: StatusPage
+  url: https://status.wealth.com
+- type: ErrorCatalog
+  url: errors/wealthcom-problem-types.yml
+- type: DataModel
+  url: data-model/wealthcom-data-model.yml
+- type: Conformance
+  url: conformance/wealthcom-conformance.yml
+- type: Compliance
+  url: https://trust.wealth.com/
+- type: TrustCenter
+  url: security/wealthcom-trust-center.yml
+- type: DomainSecurity
+  url: security/wealthcom-domain-security.yml
+- type: WellKnown
+  url: well-known/wealthcom-well-known.yml
+- type: LLMsTxt
+  url: llms/wealthcom-llms.txt
+- type: Integrations
+  url: https://www.wealth.com/integrations/
+- type: Pricing
+  url: https://www.wealth.com/pricing/
+- type: SignUp
+  url: https://app.wealth.com/login
+- type: Login
+  url: https://app.wealth.com/login
+- type: Support
+  url: https://wealth.com/help
+- type: Blog
+  url: https://www.wealth.com/resources/
+- type: TermsOfService
+  url: https://www.wealth.com/legal-policies/#tos-content
+- type: PrivacyPolicy
+  url: https://www.wealth.com/legal-policies/#privacy-content
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

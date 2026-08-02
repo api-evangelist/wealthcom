@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.wealth.com/advisor/webhooks
+type: Webhooks
+api: Wealth.com Advisor API
+docs: https://developer.wealth.com/advisor/webhooks
+delivery:
+  model: at-least-once
+  method: HTTP POST
+  content_type: application/x-www-form-urlencoded
+  target: customer-provided HTTPS endpoint (webhook_url, max 320 chars)
+security:
+  header: wealth-api-key
+  mechanism: >-
+    Each payload carries a wealth-api-key header containing a Wealth.com-issued UUID API key
+    (max 64 chars) that the receiver validates. Keys may be rotated by Wealth.com.
+payload_fields:
+  - name: Wid
+    description: Unique event identifier (UUID).
+  - name: EventType
+    description: The event that triggered the webhook (inspect to route handling).
+  - name: RegistrationEmail
+    description: Email address of the user the event concerns.
+  - name: Timestamp
+    description: ISO 8601 timestamp of the event.
+channels:
+  - name: client-webhooks
+    docs: https://developer.wealth.com/advisor/client-webhooks
+    example_event: ClientAcceptedInvitation
+    description: Client lifecycle events (e.g. a user accepts an invitation to become a client).
+  - name: document-webhooks
+    docs: https://developer.wealth.com/advisor/document-webhooks
+    description: Estate document events.
+  - name: contacts-webhooks
+    docs: https://developer.wealth.com/advisor/contacts-webhooks
+    description: Contact management events.
+  - name: asset-webhooks
+    docs: https://developer.wealth.com/advisor/asset-webhooks
+    description: Asset-related events.
+  - name: quiz-recommendation-webhooks
+    docs: https://developer.wealth.com/advisor/quiz-recommendation-webhooks
+    description: Quiz completion / recommendation events.
+registration:
+  fields:
+    - webhook_url (target endpoint, max 320 chars)
+    - ApiKey (Wealth.com-issued UUID, max 64 chars)
+notes: >-
+  Wealth.com documents a webhook surface but publishes no machine-readable AsyncAPI spec;
+  this artifact captures the documented webhook catalog (type: Webhooks). No fabricated spec.

@@ -1,0 +1,35 @@
+# Wealth.com
+
+> The industry's leading estate and tax planning platform for financial advisors. Wealth.com unifies estate planning, tax intelligence, and AI-powered insights to help advisors deliver sophisticated planning at scale for their clients.
+
+## Platform
+
+- [Platform Overview](https://www.wealth.com/platform-overview/) — Unified estate and tax planning software for financial advisors
+- [Estate Planning](https://www.wealth.com/features-document-creation/) — Document creation, scenario builder, and estate analysis tools
+- [Tax Planning](https://www.wealth.com/tax/) — AI-powered tax analysis and optimization for clients
+- [Ester® AI](https://www.wealth.com/ester-ai/) — Wealth.com's AI assistant for estate and tax planning
+- [Integrations](https://www.wealth.com/integrations/) — CRM, custodian, and financial data integrations
+- [Pricing](https://www.wealth.com/pricing/)
+
+## Solutions
+
+- [For Financial Advisors](https://www.wealth.com/for-advisors/)
+- [For Enterprises](https://www.wealth.com/for-enterprises/)
+- [For Attorneys](https://www.wealth.com/for-attorneys/)
+- [For Trust Companies](https://www.wealth.com/for-trust-companies/)
+
+## Resources
+
+- [Resource Center](https://www.wealth.com/resources/) — Articles, guides, and research for financial advisors
+- [Speakers](https://www.wealth.com/speakers/) — Estate and tax planning speakers for advisor events and conferences
+- [News & Press](https://www.wealth.com/news-and-press/)
+
+## Company
+
+- [About Wealth.com](https://www.wealth.com/about/) — Mission, leadership team, and company background
+- [Careers](https://www.wealth.com/careers)
+- [Privacy & Security](https://www.wealth.com/privacy-and-security/)
+
+## Sitemap
+
+https://www.wealth.com/sitemap_index.xml
