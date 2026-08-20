@@ -52,6 +52,10 @@ apis:
   tags:
   - Advisor API
   - Estate Planning
+  - Webhook
+  tags_raw:
+  - Advisor API
+  - Estate Planning
   - Webhooks
   properties:
   - type: Documentation
