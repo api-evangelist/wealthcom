@@ -1,0 +1,30 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.wealth.com/pricing/
+sources:
+- https://www.wealth.com/pricing/
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric prices; page states annual contracts priced per advisor seat with volume discounts, no
+  per-client or per-document fees.
+plan_count: 3
+plans:
+- name: Estate Planning
+  price_text: Inquire for Pricing
+  period: none
+- name: Tax Planning
+  price_text: Inquire for Pricing
+  period: none
+- name: Estate Planning + Tax Planning
+  price_text: Inquire for Pricing
+  period: none
